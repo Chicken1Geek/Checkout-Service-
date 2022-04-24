@@ -26,7 +26,7 @@ class CheckoutRegister:
             if product.barcode == barcode:  # use barcode to find the product object from the product[]
                 self.shopping_cart.append(product)  # add product to shopping cart
                 self.amount_due += product.price
-            return product  # return products
+                return product  # return products
         return None  # else product not found return none
 
     def accept_payment(self, get_amount_to_pay):  # accept payment
