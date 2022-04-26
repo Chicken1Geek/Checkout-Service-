@@ -20,7 +20,11 @@ def main():
         while True:
             print(f"Payment due:${cr.amount_due} ", end=" ")
             payment_amount = float(input("Please enter an amount to pay:"))
-            amount_due = cr.accept_payment(payment_amount)
+            if payment_amount < 0:
+            	print('ERRROR - Negative amount. Money is only positive')
+            	continue
+            else:
+            	amount_due = cr.accept_payment(payment_amount)
             if amount_due <= 0:
                 print("saving transaction")
                 # save transaction to file here
